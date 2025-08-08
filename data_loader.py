@@ -1,10 +1,8 @@
 import cv2
-from matplotlib.pyplot import axes
 import torch
 import numpy as np
 from torchvision import transforms
 from torch.utils.data import DataLoader
-import os
 import glob
 import random
 import PIL.Image as Image

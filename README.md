@@ -5,6 +5,13 @@ This is a PyTorch implementation of [Automated void detection in high resolution
 ## Dataset
 Please contact hymaaf@connect.ust.hk for the dataset used in the paper.
 
+## Used libary
+* pytorch 1.12.1
+* torchvision 0.13.1
+* segmentation-models-pytorch 0.3.0
+* cv2 4.5.5
+* PIL 9.2.0
+
 ## Training
 Train all encoder and decoder combinations on dataset 1. 
 ```
