@@ -18,7 +18,7 @@ python main.py --dataset_root ./datasets --dataset d1 --encoder Resnet34 --decod
 WIP
 
 ## Results
-![table of results](https://github.com/malexhy/X-ray_PCB_void_detection/blob/294f6977525bf4e25d24b9b886088d69f3b63568/Images/results.png)
+![table of results](https://github.com/malexhy/X-ray_PCB_void_detection/blob/92debaaaf85fe8ff87f0e95351c7278ceedd5ffb/Images/results.png)
 ## Citation
 ```
 @article{MA2024108425,
