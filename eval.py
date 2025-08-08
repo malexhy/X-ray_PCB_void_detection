@@ -7,7 +7,6 @@ import segment_model as seg
 import time
 import os
 from prettytable import PrettyTable
-import matplotlib.pyplot as plt
 import csv
 import argparse
 

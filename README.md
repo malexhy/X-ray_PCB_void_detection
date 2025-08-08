@@ -11,7 +11,7 @@ Please contact hymaaf@connect.ust.hk for the dataset used in the paper.
 * segmentation-models-pytorch 0.3.0
 * cv2 4.5.5
 * PIL 9.2.0
-
+* prettytable 3.3.0
 ## Training
 Train all encoder and decoder combinations on dataset 1. 
 ```
