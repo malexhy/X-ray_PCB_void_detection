@@ -1,0 +1,3 @@
+# Automated void detection in high resolution x-ray printed circuit boards (PCBs) images with deep segmentation neural network
+
+This is a PyTorch implementation of [Automated void detection in high resolution x-ray printed circuit boards (PCBs) images with deep segmentation neural network](https://www.sciencedirect.com/science/article/abs/pii/S0952197624005839) by Ho Yeung Ma, Minglu Xia, Ziyang Gao, and Wenjing Ye.

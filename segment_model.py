@@ -1,5 +1,4 @@
 import torch
-from torchsummary import summary
 import time
 from torch.utils.tensorboard import SummaryWriter
 import matplotlib.pyplot as plt
@@ -13,10 +12,8 @@ import copy
 
 class Model():
     def __init__(self, model, 
-                input_shape=(1, 256, 256),  
                 device = "cuda", 
-                name = "segNet",
-                do_summary=False):
+                name = "segNet",):
         self.oom = False
         self.model = model
         self.device = device
@@ -24,8 +21,6 @@ class Model():
         self.model.to(device)
         self.loss_fn = None
         self.metrics = None
-        if do_summary:
-            summary(self.model, input_shape, device=device)
 
 
 
@@ -254,7 +249,7 @@ def plot_pred(x, pred):
     return fig
 
 
-def create_model(encoder:str, decoder:str, input_shape, output_channels, activation, device, do_summary=False, **kwargs):
+def create_model(encoder:str, decoder:str, input_shape, output_channels, activation, device, **kwargs):
     model_name = encoder + '_' + decoder
     input_channels= input_shape[0]
     if decoder in ['Unet', 'UnetPlusPlus']:
@@ -272,7 +267,7 @@ def create_model(encoder:str, decoder:str, input_shape, output_channels, activat
                                     classes=output_channels,                
                                     activation=activation, 
                                     )
-    model = Model(segmodel, input_shape, device=device, do_summary=do_summary, name=model_name)
+    model = Model(segmodel, device=device, name=model_name)
     return model
 
 def itr_merge(itrs):

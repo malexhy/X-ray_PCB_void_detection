@@ -75,7 +75,7 @@ def main(args):
                 print('Done!')
 
                 print('Creating model...')
-                model = create_model(encoder, decoder, input_shape, 2, 'sigmoid', device, do_summary=False)
+                model = create_model(encoder, decoder, input_shape, 2, 'sigmoid', device)
                 print('Model name: ' + model.name)
 
                 save_path = f'./Run/{date_info}/{model.name}_{data_name}_{loss_name}' 
