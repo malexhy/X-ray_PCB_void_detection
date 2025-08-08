@@ -35,18 +35,22 @@ def main(args):
         encoder_list = ['efficientnet-b0', 'efficientnet-b3', "VGG13", 'Resnet18', 'Resnet34']
     elif isinstance(args.encoder, list):
         encoder_list = args.encoder
+        if 'all' in encoder_list:
+            encoder_list.remove('all')
     else:
         encoder_list = [args.encoder]
         
-    
+    print(encoder_list)
     if args.decoder == 'all':
-        decoder_list = ['Unet', 'UnetPlusPlus', 'FPN', 'PSPNet', 'DeepLabV3', 'PAN']
+        decoder_ldecoder_listist = ['Unet', 'UnetPlusPlus', 'FPN', 'PSPNet', 'DeepLabV3', 'PAN']
     elif isinstance(args.decoder, list):
         decoder_list = args.decoder
+        if 'all' in decoder_list:
+            decoder_list.remove('all')
     else:
         decoder_list = [args.decoder]
     
-    data_path_base = args.data_root
+    data_path_base = args.dataset_root
     data_path = f'{data_path_base}/{args.dataset}'
     data_name = args.dataset
     loss_name = args.loss
@@ -104,8 +108,8 @@ if __name__ == '__main__':
     
     parser.add_argument("--in_channels", type=int, default=1, help="Number of input channel")
     parser.add_argument("--out_channels", type=int, default=2, help="Number of output channel")
-    parser.add_argument("--encoder", type=str, default='all', choices=['efficientnet-b0', 'efficientnet-b3', "VGG13", 'Resnet18', 'Resnet34', 'all'])
-    parser.add_argument("--decoder", type=str, default='all', choices=['Unet', 'UnetPlusPlus', 'FPN', 'PSPNet', 'DeepLabV3', 'PAN', 'all'])
+    parser.add_argument("--encoder", type=str, nargs='+', default='all', choices=['efficientnet-b0', 'efficientnet-b3', "VGG13", 'Resnet18', 'Resnet34', 'all'])
+    parser.add_argument("--decoder", type=str, nargs='+', default='all', choices=['Unet', 'UnetPlusPlus', 'FPN', 'PSPNet', 'DeepLabV3', 'PAN', 'all'])
 
     parser.add_argument("--batch_size", type=int, default=3, help="Batch size")
     parser.add_argument("--n_epoch", type=int, default=5000, help="Number of training epoch")
@@ -114,7 +118,7 @@ if __name__ == '__main__':
     
     parser.add_argument("--l_max", type=int, default=12, help="Number of crooping loop, l_max in the paper")
     parser.add_argument("--dataset", type=str, default='d1', help="Dataset name")
-    parser.add_argument("--data_root", type=str, default='./datasets', help="Dataset root path")
+    parser.add_argument("--dataset_root", type=str, default='./datasets', help="Dataset root path")
     parser.add_argument("--in_size", type=int, default=256, help="Train time input size")
     
     
