@@ -21,6 +21,11 @@ Train the model in a specific set of encoder and decoder, e.g. Resnet34 and Unet
 ```
 python main.py --dataset_root ./datasets --dataset d1 --encoder Resnet34 --decoder UnetPlusPlus
 ```
+## Eval
+Evaluate the trained model, 
+```
+python eval.py --log_path ./Run/...... --test_path PATH_TO_TEST_DATA --save_path ./Results --dataset_root ./datasets
+```
 ## Transfer Learning
 WIP
 
